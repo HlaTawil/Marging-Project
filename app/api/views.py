@@ -8,7 +8,7 @@ from rest_framework.generics import ListAPIView
 
 
 @api_view(['GET' ])
-def api_data_view(request, slug):
+def api_data_view(request , slug):
     try:
         info = Data.objects.get(slug=slug)
     except info.DoseNotExist:
@@ -52,7 +52,7 @@ def api_delete_data_view(request, slug):
             return responses(data=data)
 
 
-@api_view(['POST' ])
+@api_view(['POST', ])
 def api_create_data_view(request, slug):
     try:
         info = Data.objects.get(slug=slug)
